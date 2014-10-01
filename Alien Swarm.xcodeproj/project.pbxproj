@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D949255719D5394B00A8794B /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D949255619D5394B00A8794B /* Agent.swift */; };
+		D949255919D5411E00A8794B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D949255819D5411E00A8794B /* SwiftyJSON.swift */; };
+		D97DBF7019D6199300B2A92A /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97DBF6F19D6199300B2A92A /* PostController.swift */; };
+		D98FCEFC19D52C84007ECADF /* Swarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98FCEFB19D52C84007ECADF /* Swarm.swift */; };
 		D9D1EB3F19D4E8D700A25D2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1EB3E19D4E8D700A25D2B /* AppDelegate.swift */; };
-		D9D1EB4119D4E8D700A25D2B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1EB4019D4E8D700A25D2B /* FirstViewController.swift */; };
-		D9D1EB4319D4E8D700A25D2B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1EB4219D4E8D700A25D2B /* SecondViewController.swift */; };
+		D9D1EB4319D4E8D700A25D2B /* PostsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1EB4219D4E8D700A25D2B /* PostsController.swift */; };
 		D9D1EB4619D4E8D700A25D2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9D1EB4419D4E8D700A25D2B /* Main.storyboard */; };
 		D9D1EB4819D4E8D700A25D2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D1EB4719D4E8D700A25D2B /* Images.xcassets */; };
 		D9D1EB4B19D4E8D700A25D2B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9D1EB4919D4E8D700A25D2B /* LaunchScreen.xib */; };
 		D9D1EB5719D4E8D800A25D2B /* Alien_SwarmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1EB5619D4E8D800A25D2B /* Alien_SwarmTests.swift */; };
+		D9D1EB6319D4EC8500A25D2B /* SubredditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1EB6219D4EC8500A25D2B /* SubredditsController.swift */; };
+		D9D1EB6519D5188B00A25D2B /* AddSubredditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D1EB6419D5188B00A25D2B /* AddSubredditsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +32,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D949255619D5394B00A8794B /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		D949255819D5411E00A8794B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		D97DBF6F19D6199300B2A92A /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		D98FCEFB19D52C84007ECADF /* Swarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swarm.swift; sourceTree = "<group>"; };
 		D9D1EB3919D4E8D700A25D2B /* Alien Swarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alien Swarm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D1EB3D19D4E8D700A25D2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9D1EB3E19D4E8D700A25D2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9D1EB4019D4E8D700A25D2B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D9D1EB4219D4E8D700A25D2B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D9D1EB4219D4E8D700A25D2B /* PostsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsController.swift; sourceTree = "<group>"; };
 		D9D1EB4519D4E8D700A25D2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9D1EB4719D4E8D700A25D2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D9D1EB4A19D4E8D700A25D2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D9D1EB5019D4E8D800A25D2B /* Alien SwarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Alien SwarmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D1EB5519D4E8D800A25D2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9D1EB5619D4E8D800A25D2B /* Alien_SwarmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alien_SwarmTests.swift; sourceTree = "<group>"; };
+		D9D1EB6219D4EC8500A25D2B /* SubredditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditsController.swift; sourceTree = "<group>"; };
+		D9D1EB6419D5188B00A25D2B /* AddSubredditsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSubredditsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +90,17 @@
 			isa = PBXGroup;
 			children = (
 				D9D1EB3E19D4E8D700A25D2B /* AppDelegate.swift */,
-				D9D1EB4019D4E8D700A25D2B /* FirstViewController.swift */,
-				D9D1EB4219D4E8D700A25D2B /* SecondViewController.swift */,
+				D98FCEFB19D52C84007ECADF /* Swarm.swift */,
+				D9D1EB4219D4E8D700A25D2B /* PostsController.swift */,
+				D97DBF6F19D6199300B2A92A /* PostController.swift */,
+				D9D1EB6219D4EC8500A25D2B /* SubredditsController.swift */,
+				D9D1EB6419D5188B00A25D2B /* AddSubredditsController.swift */,
 				D9D1EB4419D4E8D700A25D2B /* Main.storyboard */,
 				D9D1EB4719D4E8D700A25D2B /* Images.xcassets */,
 				D9D1EB4919D4E8D700A25D2B /* LaunchScreen.xib */,
 				D9D1EB3C19D4E8D700A25D2B /* Supporting Files */,
+				D949255619D5394B00A8794B /* Agent.swift */,
+				D949255819D5411E00A8794B /* SwiftyJSON.swift */,
 			);
 			path = "Alien Swarm";
 			sourceTree = "<group>";
@@ -215,9 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9D1EB4319D4E8D700A25D2B /* SecondViewController.swift in Sources */,
+				D9D1EB4319D4E8D700A25D2B /* PostsController.swift in Sources */,
+				D97DBF7019D6199300B2A92A /* PostController.swift in Sources */,
+				D98FCEFC19D52C84007ECADF /* Swarm.swift in Sources */,
+				D9D1EB6319D4EC8500A25D2B /* SubredditsController.swift in Sources */,
+				D949255719D5394B00A8794B /* Agent.swift in Sources */,
+				D9D1EB6519D5188B00A25D2B /* AddSubredditsController.swift in Sources */,
+				D949255919D5411E00A8794B /* SwiftyJSON.swift in Sources */,
 				D9D1EB3F19D4E8D700A25D2B /* AppDelegate.swift in Sources */,
-				D9D1EB4119D4E8D700A25D2B /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +429,7 @@
 				D9D1EB5C19D4E8D800A25D2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D9D1EB5D19D4E8D800A25D2B /* Build configuration list for PBXNativeTarget "Alien SwarmTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +438,7 @@
 				D9D1EB5F19D4E8D800A25D2B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
