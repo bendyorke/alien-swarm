@@ -9,6 +9,8 @@
 import UIKit
 
 class PostsController: UITableViewController, UITabBarControllerDelegate {
+    
+    var imageCache = [String : UIImage]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,18 +47,52 @@ class PostsController: UITableViewController, UITabBarControllerDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Post", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel!.text = swarm.posts[indexPath.row].title
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as PostCell
+        let post = swarm.posts[indexPath.row]
+        cell.title!.text = post.title
+        
+        if(post.thumb? != nil && post.thumb!.rangeOfString("http") != nil) {
+            cell.thumb!.image = UIImage(named: "first.imageset")
+            cell.thumb!.contentMode = .ScaleAspectFit
+            var image = self.imageCache[post.thumb!]
+            
+            if(image == nil) {
+                FetchAsync(url: post.thumb!) { data in
+                    if(data? != nil) {
+                        image = UIImage(data: data!)
+                        self.imageCache[post.thumb!] = image
+                        dispatch_async(dispatch_get_main_queue(), {
+                            if let postCell = tableView.cellForRowAtIndexPath(indexPath) as? PostCell {
+                                postCell.thumb!.image = image
+                            }
+                        })
+                    }
+                }
+            } else {
+                dispatch_async(dispatch_get_main_queue(), {
+                    if let postCell = tableView.cellForRowAtIndexPath(indexPath) as? PostCell {
+                        postCell.thumb!.image = image
+                    }
+                })
+            }
+        } else {
+            cell.thumb!.image = nil
+        }
+        
         return cell
     }
-    
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showPost") {
             let index = tableView.indexPathForSelectedRow()
             var postController = segue.destinationViewController as PostController
             postController.post = swarm.posts[index!.row]
         }
-        
+        if(segue.identifier == "showSubreddits") {
+            var navController = segue.destinationViewController as UINavigationController
+            var subredditsController = navController.viewControllers[0] as SubredditsController
+            subredditsController.postsController = self
+        }
     }
     
     // Refresh
@@ -72,14 +108,6 @@ class PostsController: UITableViewController, UITabBarControllerDelegate {
                 self.tableView.reloadData()
             })
         })
-    }
-    
-    // Refresh on tab change
-    
-    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
-        if(tabBarController.selectedIndex == 0) {
-            refresh()
-        }
     }
 
 }

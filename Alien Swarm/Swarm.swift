@@ -10,22 +10,28 @@ import UIKit
 
 class Post {
     let title: String
-    init(title: String) {
+    let pic: Bool
+    let url: String
+    let thumb: String?
+    init(title: String, pic: Bool, url: String, thumb: String) {
         self.title = title
+        self.pic = pic
+        self.url = url
+        self.thumb = thumb
     }
 }
 
-class Swarm: NSObject {
+class Swarm {
     var subreddits: [String] = []
     var posts: [Post] = []
     
-    override init() {
-        super.init()
+    init() {
+//        super.init()
         load()
     }
     
     func load() {
-        for subreddit in ["apple", "swift"] {
+        for subreddit in ["apple", "swift", "pics"] {
             self.add(subreddit)
         }
     }
@@ -44,11 +50,13 @@ class Swarm: NSObject {
         req.end({ (response: NSHTTPURLResponse!, data: Agent.Data!, error: NSError!) -> Void in
             let json = JSON(object: data!)
             if let children = json["data"]["children"].arrayValue {
-                self.posts = []
-                for child in children {
+                self.posts = map(children) { child in
                     let title: String = child["data"]["title"].stringValue!
-                    let post = Post(title: title)
-                    self.posts.append(post)
+                    let pic: Bool = child["data"]["domain"].stringValue! == "i.imgur.com"
+                    let url: String = child["data"]["url"].stringValue!
+                    let thumb: String = child["data"]["thumbnail"].stringValue!
+                    let post = Post(title: title, pic: pic, url: url, thumb: thumb)
+                    return post
                 }
             }
             fn()

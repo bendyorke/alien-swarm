@@ -11,11 +11,13 @@ import UIKit
 class PostController: UIViewController {
     
     var post:Post!
-
+    
+    @IBOutlet weak var optionalImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         navigationItem.title = post.title
+        if(post.pic) { loadPic() }
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,14 +26,21 @@ class PostController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    func loadPic() {
+//        var imageRequest: NSURLRequest = NSURLRequest(URL: NSURL(string: self.post.url)!)
+//        NSURLConnection.sendAsynchronousRequest(imageRequest,
+//                                                queue: NSOperationQueue.mainQueue(),
+//                                                completionHandler: { response, data, error in
+//            self.optionalImageView.image = UIImage(data: data)
+//            self.optionalImageView.contentMode = UIViewContentMode.ScaleAspectFit
+//        })
+        FetchAsync(url: self.post.url) { data in
+            if(data? != nil) {
+                self.optionalImageView.image = UIImage(data: data!)
+                // self.optionalImageView.contentMode = UIViewContentMode.ScaleAspectFit
+            }
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

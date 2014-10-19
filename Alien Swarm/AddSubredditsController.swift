@@ -11,6 +11,7 @@ import UIKit
 class AddSubredditsController: UIViewController, UITextFieldDelegate {
 
     @IBAction func done(sender: UIBarButtonItem) {
+        submit()
         subreddit.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -25,7 +26,7 @@ class AddSubredditsController: UIViewController, UITextFieldDelegate {
     }
     
     func submit() {
-        swarm.add(subreddit.text)
+        swarm.add(subreddit.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()))
         subreddit.text = nil
     }
     
